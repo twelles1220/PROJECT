@@ -1,0 +1,33 @@
+# *****************************************************
+
+
+#The following variables control the operations of the makefile
+
+
+# The variables are shortcuts for the GNU G++ compiler
+ 
+CC = g++ # The variable represents the g++ command for compiling c++ code
+CCFLAGS = -Wall -Wextra -Werror -std=c99 -pedantic -g
+ 
+# ****************************************************
+# There is only one file that makes up the program
+
+# The target output file is main.o
+
+all: main
+main: main.o
+      ${CC} $(CCFLAGS) -o main main.o
+main.o: main.cpp
+      ${CC} -c main.cpp
+clean:
+      rm -f main.o main
+
+	  
+#  running the compiled program on the terminal
+
+#  ./main.o 
+
+
+#  Selecting menu items calls different functions 
+#  such as promoting user input, generating output, 
+#  creating as well as reading files
